@@ -114,6 +114,8 @@ private:
     QAction *showBackupsAction;
     QAction *openAction;
     QAction *showHelpMessageAction;
+	QAction *genAndPrintAddressesAction;
+    QAction *loadFromPaperAction;
 
     QSystemTrayIcon *trayIcon;
     QMenu *trayIconMenu;

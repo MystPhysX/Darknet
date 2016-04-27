@@ -439,6 +439,19 @@ WalletModel::EncryptionStatus WalletModel::getEncryptionStatus() const
     }
 }
 
+CKey WalletModel::generateNewKey() const
+{
+    return wallet->GeneratePrivKey();
+}
+
+bool WalletModel::setAddressBook(const CTxDestination& address, const string& strName, const string& strPurpose)
+{
+    LOCK(wallet->cs_wallet);
+    {
+        return wallet->SetAddressBook(address, strName, strPurpose);
+    }
+}
+
 bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString &passphrase)
 {
     if(encrypted)
